@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosheen Anwar — Marketing Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#050d1a;--deep:#081122;--navy:#0c1a30;--panel:#0f2040;--edge:#162848;
+  --teal:#00c8ae;--teal2:#00e8ca;--teal3:rgba(0,200,174,0.10);
+  --gold:#d4a843;--gold2:#f0c96a;--gold3:rgba(212,168,67,0.12);
+  --white:#edf2f7;--muted:#5a7a9a;--muted2:#3a5570;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--white);font-family:'Outfit',sans-serif;overflow-x:hidden;cursor:none}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.022;pointer-events:none;z-index:1000}
+
+/* CURSOR */
+#cur{position:fixed;width:8px;height:8px;background:var(--teal2);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen}
+#cur2{position:fixed;width:38px;height:38px;border:1px solid rgba(0,200,174,0.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+#cur3{position:fixed;width:76px;height:76px;border:1px solid rgba(0,200,174,0.09);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:all .5s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.3rem 5rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+nav.scrolled{background:rgba(5,13,26,0.93);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,200,174,0.07)}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;letter-spacing:2px;color:var(--white)}
+.nav-brand em{color:var(--teal);font-style:italic}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.68rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:color .25s;position:relative}
+.nav-links a::before{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--teal2);transition:width .35s cubic-bezier(.76,0,.24,1)}
+.nav-links a:hover{color:var(--teal2)}
+.nav-links a:hover::before{width:100%}
+.nav-cta{background:transparent;border:1px solid rgba(0,200,174,0.4);color:var(--teal2);padding:.5rem 1.5rem;border-radius:2rem;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-family:'Outfit',sans-serif;cursor:none;text-decoration:none;transition:all .3s;font-weight:500}
+.nav-cta:hover{background:var(--teal);border-color:var(--teal);color:var(--ink)}
+
+/* HERO */
+#hero{height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.scan{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(0,200,174,0.4),transparent);animation:scanDown 10s linear infinite;pointer-events:none}
+@keyframes scanDown{0%{top:0;opacity:.3}50%{opacity:.6}100%{top:100%;opacity:0}}
+.hero-inner{position:relative;z-index:10;padding:0 8rem;width:100%}
+.h-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:sR 1s .3s cubic-bezier(.16,1,.3,1) forwards}
+.h-eyebrow-line{width:48px;height:1px;background:var(--teal)}
+.h-eyebrow span{font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--teal);font-weight:500}
+.h-name{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,10.5vw,9.5rem);font-weight:300;line-height:.92;margin-bottom:1.5rem;opacity:0;animation:sU 1.2s .55s cubic-bezier(.16,1,.3,1) forwards}
+.h-name .l1{display:block;letter-spacing:-2px;color:var(--white)}
+.h-name .l2{display:block;font-style:italic;font-weight:700;letter-spacing:-3px;background:linear-gradient(130deg,var(--teal2) 0%,var(--gold2) 55%,var(--teal) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h-name .l3{display:block;font-family:'Outfit',sans-serif;font-size:.18em;letter-spacing:8px;text-transform:uppercase;color:var(--muted);font-weight:200;margin-top:1.2rem}
+.h-desc{max-width:460px;color:var(--muted);font-size:.93rem;line-height:1.95;margin-bottom:3rem;font-weight:300;opacity:0;animation:sU 1s .85s cubic-bezier(.16,1,.3,1) forwards}
+.h-desc strong{color:var(--teal2);font-weight:500}
+.h-btns{display:flex;gap:1.2rem;align-items:center;opacity:0;animation:sU 1s 1.1s cubic-bezier(.16,1,.3,1) forwards}
+.btn-prime{position:relative;display:inline-block;background:var(--teal);color:var(--ink);padding:.95rem 2.8rem;border:none;border-radius:.25rem;font-size:.73rem;letter-spacing:2px;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:600;cursor:none;text-decoration:none;overflow:hidden;transition:transform .3s}
+.btn-prime::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--teal2),var(--gold));opacity:0;transition:opacity .35s}
+.btn-prime:hover::before{opacity:1}
+.btn-prime:hover{transform:translateY(-2px)}
+.btn-prime span{position:relative;z-index:1}
+.btn-ghost{color:var(--muted);font-size:.73rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-weight:500;padding:.3rem 0;border-bottom:1px solid var(--muted2);transition:all .3s}
+.btn-ghost:hover{color:var(--white);border-color:var(--white)}
+.h-badge{position:absolute;right:8rem;top:50%;transform:translateY(-50%);z-index:10;opacity:0;animation:fI 1s 1.4s forwards}
+.badge-ring{width:155px;height:155px;border-radius:50%;border:1px solid rgba(0,200,174,0.18);display:flex;align-items:center;justify-content:center;position:relative;animation:spin 22s linear infinite}
+.badge-inner{width:98px;height:98px;border-radius:50%;background:var(--panel);border:1px solid rgba(0,200,174,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;animation:spin 22s linear reverse infinite}
+.bi-num{font-size:1.9rem;font-weight:600;color:var(--teal2);line-height:1}
+.bi-lbl{font-size:0.5rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.h-scroll{position:absolute;bottom:2.5rem;left:8rem;z-index:10;display:flex;align-items:center;gap:1rem;opacity:0;animation:fI 1s 1.6s forwards}
+.h-scroll-line{width:1px;height:56px;background:var(--muted2);position:relative;overflow:hidden}
+.h-scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--teal2);animation:sT 2s ease-in-out infinite}
+@keyframes sT{0%{top:-100%}100%{top:100%}}
+.h-scroll span{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);writing-mode:vertical-lr}
+@keyframes sR{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes sU{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fI{from{opacity:0}to{opacity:1}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* MARQUEE */
+.mq-wrap{background:var(--teal);padding:.9rem 0;overflow:hidden;border-top:1px solid rgba(0,232,202,.3);border-bottom:1px solid rgba(0,232,202,.3)}
+.mq-track{display:flex;gap:2.5rem;width:max-content;animation:mq 22s linear infinite}
+.mq-item{display:flex;align-items:center;gap:.9rem;white-space:nowrap;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink);font-weight:600}
+.mq-dot{width:4px;height:4px;border-radius:50%;background:rgba(5,13,26,.35)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION BASE */
+.sw{max-width:1240px;margin:0 auto;padding:8rem 4.5rem}
+.sl{display:flex;align-items:center;gap:1rem;margin-bottom:.9rem}
+.sl::before{content:'';width:28px;height:1px;background:var(--teal)}
+.sl span{font-size:.63rem;letter-spacing:4px;text-transform:uppercase;color:var(--teal);font-weight:500}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;line-height:1.06;margin-bottom:.8rem}
+.st em{font-style:italic;color:var(--teal2)}
+.st strong{font-weight:700}
+.sr{width:1px;height:72px;background:linear-gradient(to bottom,var(--teal),transparent);margin:1.8rem 0 3rem}
+.rv{opacity:0;transform:translateY(44px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rvl{opacity:0;transform:translateX(-44px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.on{opacity:1;transform:translate(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* ABOUT */
+#about{background:var(--deep);position:relative;overflow:hidden}
+#about::before{content:'';position:absolute;right:-250px;top:-200px;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(0,200,174,0.035) 0%,transparent 68%);pointer-events:none}
+.abt-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:8rem;align-items:start}
+.abt-big{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.3vw,1.95rem);font-weight:300;line-height:1.65;color:var(--white);margin-bottom:2.4rem}
+.abt-big em{color:var(--teal2);font-style:italic}
+.abt-body{color:var(--muted);font-size:.88rem;line-height:2.05;font-weight:300}
+.abt-body p+p{margin-top:.9rem}
+.abt-body strong{color:var(--white);font-weight:500}
+.abt-sig{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--edge);display:flex;align-items:center;gap:1.4rem}
+.sig-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--ink)}
+.sig-name{font-weight:500;font-size:.93rem;color:var(--white)}
+.sig-role{font-size:.75rem;color:var(--teal2);margin-top:2px}
+.stat-list{}
+.stat-row{padding:1.8rem 0;border-bottom:1px solid var(--edge);display:flex;justify-content:space-between;align-items:center;cursor:default;transition:padding-left .3s}
+.stat-row:first-child{border-top:1px solid var(--edge)}
+.stat-row:hover{padding-left:1rem}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;color:transparent;-webkit-text-stroke:1px var(--teal2);line-height:1;transition:color .3s,-webkit-text-stroke-color .3s}
+.stat-row:hover .stat-num{color:var(--teal2);-webkit-text-stroke-color:transparent}
+.stat-right{text-align:right}
+.stat-lbl{font-size:.8rem;color:var(--white);font-weight:500;margin-bottom:.15rem}
+.stat-sub{font-size:.7rem;color:var(--muted);max-width:190px;text-align:right;line-height:1.55}
+
+/* SKILLS */
+#skills{background:var(--ink)}
+.sk-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:6rem;align-items:start}
+.sk-intro-body{color:var(--muted);font-size:.87rem;line-height:2.05;margin-top:1.4rem}
+.ai-box{margin-top:2.2rem;padding:1.8rem;background:linear-gradient(135deg,var(--panel),var(--edge));border:1px solid rgba(0,200,174,0.14);border-radius:.9rem}
+.ai-box-title{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.9rem;font-weight:500}
+.ai-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.ai-chip{background:rgba(0,200,174,0.07);border:1px solid rgba(0,200,174,0.18);color:var(--teal2);font-size:.7rem;padding:.3rem .9rem;border-radius:2rem}
+.pill-cloud{display:flex;flex-wrap:wrap;gap:.7rem;align-content:start}
+.pill{display:inline-flex;align-items:center;gap:.55rem;padding:.6rem 1.3rem;border-radius:2rem;border:1px solid var(--edge);color:var(--muted);font-size:.76rem;font-weight:400;cursor:default;transition:all .38s cubic-bezier(.16,1,.3,1);letter-spacing:.4px}
+.pill:hover{border-color:var(--teal);color:var(--teal2);background:var(--teal3);transform:scale(1.04)}
+.pill.lg{font-size:.88rem;padding:.75rem 1.7rem}
+.pill.xl{font-size:.98rem;padding:.85rem 2rem;border-color:var(--muted2)}
+.pill .d{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.55}
+
+/* EXPERIENCE */
+#experience{background:var(--deep)}
+.exp-layout{display:grid;grid-template-columns:280px 1fr;gap:3.5rem}
+.exp-sidebar{position:sticky;top:110px;height:fit-content}
+.exp-tab{padding:.9rem 1.4rem;border-left:2px solid var(--edge);cursor:none;transition:all .3s;margin-bottom:.25rem}
+.exp-tab:hover,.exp-tab.on{border-color:var(--teal2);background:var(--teal3)}
+.et-date{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:.2rem;font-weight:500}
+.et-role{font-size:.82rem;color:var(--white);font-weight:500;line-height:1.3}
+.et-org{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.exp-panel{display:none;padding:2.8rem;background:var(--panel);border:1px solid var(--edge);border-radius:1.1rem;position:relative;overflow:hidden}
+.exp-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--teal2),var(--gold))}
+.exp-panel.on{display:block;animation:pIn .4s cubic-bezier(.16,1,.3,1)}
+@keyframes pIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.ep-role{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--white);margin-bottom:.25rem}
+.ep-org{font-size:.85rem;color:var(--teal2);font-weight:500;margin-bottom:.5rem}
+.ep-date{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem}
+.ep-body{color:var(--muted);font-size:.86rem;line-height:2;margin-bottom:1.4rem}
+.ep-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ep-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.83rem;color:var(--muted);line-height:1.65}
+.ep-list li::before{content:'';width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--teal);margin-top:.55rem}
+.ep-metrics{display:flex;gap:2rem;margin-top:1.8rem;padding-top:1.8rem;border-top:1px solid var(--edge);flex-wrap:wrap}
+.ep-m .mv{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold2);line-height:1}
+.ep-m .ml{font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:.15rem}
+.ep-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
+.ep-tag{background:var(--teal3);border:1px solid rgba(0,200,174,0.18);color:var(--teal2);font-size:.67rem;padding:.22rem .75rem;border-radius:2rem}
+
+/* GALLERY */
+#gallery{background:var(--ink);position:relative;overflow:hidden}
+#gallery::after{content:'PORTFOLIO';position:absolute;right:-60px;top:50%;transform:translateY(-50%) rotate(90deg);font-family:'Cormorant Garamond',serif;font-size:9rem;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(0,200,174,0.038);pointer-events:none;white-space:nowrap}
+.gal-filter{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.gf{background:transparent;border:1px solid var(--edge);color:var(--muted);padding:.45rem 1.2rem;border-radius:2rem;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;font-family:'Outfit',sans-serif;cursor:none;transition:all .3s;font-weight:500}
+.gf.on,.gf:hover{background:var(--teal);border-color:var(--teal);color:var(--ink)}
+.gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:255px;gap:.9rem}
+.gc{position:relative;overflow:hidden;border-radius:.75rem;cursor:none;background:var(--panel);border:1px solid var(--edge);transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .4s}
+.gc:hover{transform:scale(1.025);border-color:rgba(0,200,174,0.28);box-shadow:0 18px 48px rgba(0,200,174,0.09)}
+.gc.c4{grid-column:span 4}.gc.c5{grid-column:span 5}.gc.c3{grid-column:span 3}.gc.c6{grid-column:span 6}.gc.c7{grid-column:span 7}.gc.tall{grid-row:span 2}
+.gc-bg{position:absolute;inset:0;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.gc:hover .gc-bg{transform:scale(1.07)}
+.gc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,26,.97) 0%,rgba(5,13,26,.25) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem}
+.gc-cat{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.35rem;font-weight:500}
+.gc-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--white);line-height:1.28;margin-bottom:.28rem}
+.gc-sub{font-size:.72rem;color:var(--muted);line-height:1.5;max-width:270px}
+.gc-badge{display:inline-block;margin-top:.55rem;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.28);color:var(--gold2);font-size:.62rem;padding:.18rem .65rem;border-radius:2rem;font-weight:500}
+.gc-ico{position:absolute;top:.9rem;right:.9rem;width:30px;height:30px;border-radius:50%;background:rgba(5,13,26,.55);border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;font-size:.8rem;backdrop-filter:blur(4px)}
+.bg-s1{background:linear-gradient(135deg,#081b14,#0d3320)}
+.bg-b1{background:linear-gradient(135deg,#0d1a38,#1a2850)}
+.bg-d1{background:linear-gradient(135deg,#1a0d2e,#281050)}
+.bg-w1{background:linear-gradient(135deg,#0a1520,#142035)}
+.bg-c1{background:linear-gradient(135deg,#0d1a30,#1a2a45)}
+.bg-a1{background:linear-gradient(135deg,#1a1808,#2e2a10)}
+.bg-e1{background:linear-gradient(135deg,#081a10,#0f2a18)}
+.bg-v1{background:linear-gradient(135deg,#1a0808,#2e1010)}
+.gp{position:absolute;inset:0;opacity:.22;pointer-events:none}
+
+/* EDUCATION */
+#education{background:var(--deep)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.edu-tl{position:relative;padding-left:1.4rem}
+.edu-tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--teal),transparent)}
+.edu-item{margin-bottom:2.3rem;position:relative}
+.edu-item::before{content:'';position:absolute;left:-1.75rem;top:.3rem;width:7px;height:7px;border-radius:50%;background:var(--teal2);box-shadow:0 0 0 3px rgba(0,200,174,0.13)}
+.edu-yr{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.25rem;font-weight:500}
+.edu-deg{font-size:.95rem;font-weight:500;color:var(--white);margin-bottom:.15rem;line-height:1.3}
+.edu-uni{font-size:.77rem;color:var(--muted)}
+.pub-sec-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--white);margin-bottom:1.8rem;padding-bottom:.9rem;border-bottom:1px solid var(--edge)}
+.pub-c{padding:1.6rem 1.8rem;margin-bottom:1.1rem;background:var(--panel);border:1px solid var(--edge);border-radius:.75rem;transition:all .3s;position:relative;overflow:hidden}
+.pub-c::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,var(--gold),transparent)}
+.pub-c:hover{border-color:rgba(212,168,67,.28);transform:translateX(4px)}
+.pub-badge{display:inline-block;margin-bottom:.7rem;background:var(--gold3);border:1px solid rgba(212,168,67,.22);color:var(--gold2);font-size:.62rem;padding:.18rem .75rem;border-radius:2rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.pub-t{font-size:.87rem;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:.45rem}
+.pub-conf{font-size:.75rem;color:var(--muted);margin-bottom:.28rem}
+.pub-doi{font-size:.68rem;color:var(--muted2);font-family:monospace}
+
+/* CERTIFICATIONS */
+#certifications{background:var(--ink)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.cert-grp{padding:1.9rem;background:var(--panel);border:1px solid var(--edge);border-radius:.95rem;transition:border-color .3s}
+.cert-grp:hover{border-color:rgba(0,200,174,0.18)}
+.cg-ico{font-size:1.4rem;margin-bottom:.9rem}
+.cg-t{font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:1px solid var(--edge)}
+.ci{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.75rem;align-items:flex-start}
+.ci:last-child{border-bottom:none}
+.ci-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--teal);margin-top:.44rem}
+.ci-name{font-size:.8rem;color:var(--white);line-height:1.4}
+.ci-meta{font-size:.68rem;color:var(--muted);margin-top:.08rem}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--deep);padding:5rem 0;position:relative;overflow:hidden}
+#achievements::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 100%,rgba(0,200,174,0.045),transparent)}
+.ach-wrap{max-width:1240px;margin:0 auto;padding:0 4.5rem}
+.ach-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--edge);border-radius:1.1rem;overflow:hidden;margin-top:3.5rem}
+.ach-cell{padding:2.8rem 1.8rem;text-align:center;border-right:1px solid var(--edge);transition:background .35s;cursor:default;position:relative}
+.ach-cell:last-child{border-right:none}
+.ach-cell:hover{background:var(--teal3)}
+.ach-n{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:300;line-height:1;color:var(--teal2);transition:transform .3s}
+.ach-cell:hover .ach-n{transform:scale(1.1)}
+.ach-s{font-size:1.4rem;color:var(--gold)}
+.ach-l{font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);line-height:1.6;margin-top:.3rem}
+
+/* CONTACT */
+#contact{background:var(--ink);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:780px;height:780px;border-radius:50%;border:1px solid rgba(0,200,174,0.038)}
+#contact::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:480px;height:480px;border-radius:50%;border:1px solid rgba(0,200,174,0.055)}
+.contact-wrap{max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.contact-email-link{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3.8vw,2.8rem);font-weight:300;color:var(--white);text-decoration:none;margin:2.4rem 0;letter-spacing:-1px;transition:color .3s}
+.contact-email-link:hover{color:var(--teal2)}
+.contact-row{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
+.contact-col .cl{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.25rem;font-weight:500}
+.contact-col .cv{font-size:.88rem;color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid var(--edge);padding:1.9rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.ft-b{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white)}
+.ft-b em{color:var(--teal);font-style:italic}
+.ft-r{font-size:.7rem;color:var(--muted);letter-spacing:1px}
+.ft-r span{color:var(--teal2)}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--ink);position:relative;overflow:hidden}
+#testimonials::before{content:'REVIEWS';position:absolute;left:-60px;top:50%;transform:translateY(-50%) rotate(-90deg);font-family:'Cormorant Garamond',serif;font-size:9rem;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(0,200,174,0.035);pointer-events:none;white-space:nowrap}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:5rem}
+.tm-card{background:var(--panel);border:1px solid var(--edge);border-radius:1rem;padding:2rem;position:relative;overflow:hidden;transition:all .35s;cursor:default}
+.tm-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--teal2),var(--gold));opacity:0;transition:opacity .35s}
+.tm-card:hover{border-color:rgba(0,200,174,0.22);transform:translateY(-5px)}
+.tm-card:hover::before{opacity:1}
+.tm-quote-mark{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:var(--teal2);opacity:0.15;line-height:.6;margin-bottom:.5rem;display:block}
+.tm-text{font-size:.88rem;color:var(--muted);line-height:1.95;font-style:italic;margin-bottom:1.5rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300}
+.tm-author{display:flex;align-items:center;gap:1rem;padding-top:1.2rem;border-top:1px solid var(--edge)}
+.tm-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;flex-shrink:0}
+.tm-av-teal{background:linear-gradient(135deg,rgba(0,200,174,0.2),rgba(0,200,174,0.05));border:1px solid rgba(0,200,174,0.3);color:var(--teal2)}
+.tm-av-gold{background:linear-gradient(135deg,rgba(212,168,67,0.2),rgba(212,168,67,0.05));border:1px solid rgba(212,168,67,0.3);color:var(--gold2)}
+.tm-av-blue{background:linear-gradient(135deg,rgba(100,149,237,0.2),rgba(100,149,237,0.05));border:1px solid rgba(100,149,237,0.3);color:#6495ed}
+.tm-name{font-size:.88rem;font-weight:500;color:var(--white);margin-bottom:.1rem}
+.tm-role{font-size:.72rem;color:var(--muted)}
+.tm-relation{display:inline-block;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;padding:.18rem .65rem;border-radius:2rem;margin-top:.3rem;font-weight:500}
+.tm-rel-employer{background:rgba(0,200,174,0.1);border:1px solid rgba(0,200,174,0.2);color:var(--teal2)}
+.tm-rel-student{background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.2);color:var(--gold2)}
+.tm-rel-colleague{background:rgba(100,149,237,0.1);border:1px solid rgba(100,149,237,0.2);color:#6495ed}
+.tm-rel-peer{background:rgba(155,100,210,0.1);border:1px solid rgba(155,100,210,0.2);color:#c09ae8}
+.tm-stars{color:var(--gold);font-size:.75rem;margin-bottom:.9rem;letter-spacing:2px}
+
+/* GUESTBOOK */
+.gb-wrap{background:var(--panel);border:1px solid var(--edge);border-radius:1.2rem;overflow:hidden}
+.gb-header{padding:2rem 2.5rem;border-bottom:1px solid var(--edge);display:flex;justify-content:space-between;align-items:center}
+.gb-header-left .gb-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--white)}
+.gb-header-left .gb-sub{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.gb-count{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--teal2);text-align:right}
+.gb-count-lbl{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.gb-form{padding:2rem 2.5rem;border-bottom:1px solid var(--edge);background:rgba(0,200,174,0.02)}
+.gb-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem}
+.gb-field{display:flex;flex-direction:column;gap:.4rem}
+.gb-field label{font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:500}
+.gb-input{background:var(--navy);border:1px solid var(--edge);color:var(--white);padding:.7rem 1rem;border-radius:.4rem;font-size:.85rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color .25s;width:100%}
+.gb-input:focus{border-color:var(--teal)}
+.gb-input::placeholder{color:var(--muted2)}
+.gb-select{background:var(--navy);border:1px solid var(--edge);color:var(--white);padding:.7rem 1rem;border-radius:.4rem;font-size:.85rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color .25s;width:100%;cursor:none}
+.gb-select:focus{border-color:var(--teal)}
+.gb-textarea{background:var(--navy);border:1px solid var(--edge);color:var(--white);padding:.7rem 1rem;border-radius:.4rem;font-size:.85rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color .25s;width:100%;resize:none;min-height:90px;display:block;margin-bottom:1rem}
+.gb-textarea:focus{border-color:var(--teal)}
+.gb-textarea::placeholder{color:var(--muted2)}
+.gb-form-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.gb-note{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.gb-note::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.gb-submit{background:var(--teal);color:var(--ink);border:none;padding:.75rem 2.2rem;border-radius:.3rem;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:600;cursor:none;transition:all .3s;position:relative;overflow:hidden}
+.gb-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--teal2),var(--gold));opacity:0;transition:opacity .3s}
+.gb-submit:hover::before{opacity:1}
+.gb-submit span{position:relative;z-index:1}
+.gb-submit:disabled{opacity:.5;cursor:default}
+.gb-entries{padding:2rem 2.5rem;display:flex;flex-direction:column;gap:1.2rem;max-height:500px;overflow-y:auto}
+.gb-entries::-webkit-scrollbar{width:4px}
+.gb-entries::-webkit-scrollbar-track{background:var(--edge)}
+.gb-entries::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
+.gb-entry{display:flex;gap:1.2rem;padding:1.2rem;background:var(--navy);border:1px solid var(--edge);border-radius:.7rem;animation:entryIn .5s cubic-bezier(.16,1,.3,1)}
+@keyframes entryIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.gb-entry-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;flex-shrink:0;font-family:'Cormorant Garamond',serif}
+.gb-entry-body{flex:1}
+.gb-entry-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.4rem;flex-wrap:wrap;gap:.4rem}
+.gb-entry-name{font-size:.88rem;font-weight:500;color:var(--white)}
+.gb-entry-meta{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+.gb-entry-rel{font-size:.6rem;letter-spacing:1px;text-transform:uppercase;padding:.15rem .6rem;border-radius:2rem;font-weight:500}
+.gb-entry-time{font-size:.68rem;color:var(--muted2)}
+.gb-entry-msg{font-size:.84rem;color:var(--muted);line-height:1.7;font-style:italic}
+.gb-empty{text-align:center;padding:3rem;color:var(--muted2);font-size:.85rem}
+.gb-ai-badge{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:var(--muted2);padding:1rem 2.5rem;border-top:1px solid var(--edge)}
+.gb-ai-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.gb-success{display:none;align-items:center;gap:.8rem;background:rgba(0,200,174,0.08);border:1px solid rgba(0,200,174,0.2);border-radius:.5rem;padding:.9rem 1.2rem;margin-top:1rem;font-size:.82rem;color:var(--teal2)}
+.gb-success.show{display:flex}
+
+
+/* Ensure hamburger hidden on desktop */
+@media(min-width:769px){.nav-hamburger{display:none!important}.mobile-menu{display:none!important}}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — Mobile First
+   Breakpoints: 480 / 768 / 1024 / 1280
+═══════════════════════════════════════════════════ */
+
+/* ── 1280px and below ─────────────────────────── */
+@media(max-width:1280px){
+  .sw{padding:6rem 3rem}
+  .hero-inner{padding:0 4rem}
+  .h-badge{right:4rem}
+  .h-scroll{left:4rem}
+  nav{padding:1.2rem 3rem}
+  footer{padding:1.8rem 3rem}
+  .ach-wrap{padding:0 3rem}
+  .abt-grid{gap:4rem}
+  .sk-layout{gap:4rem}
+  .edu-grid{gap:3rem}
+  .tm-grid{grid-template-columns:repeat(3,1fr)}
+  .ach-grid{grid-template-columns:repeat(3,1fr)}
+  .ach-cell{border-bottom:1px solid var(--edge)}
+  .ach-cell:nth-child(3){border-right:none}
+  .ach-cell:nth-child(4){border-right:1px solid var(--edge)}
+  .ach-cell:nth-child(6){border-right:none}
+  .gal-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:220px}
+  .gc.c4{grid-column:span 3}.gc.c5{grid-column:span 3}.gc.c3{grid-column:span 3}
+  .gc.c6{grid-column:span 6}.gc.c7{grid-column:span 6}
+}
+
+/* ── 1024px and below ─────────────────────────── */
+@media(max-width:1024px){
+  nav{padding:1.1rem 2rem}
+  .nav-links{gap:1.5rem}
+  .nav-links a{font-size:.62rem;letter-spacing:1.8px}
+  .nav-cta{padding:.45rem 1.1rem;font-size:.62rem}
+  .sw{padding:5rem 2.5rem}
+  .hero-inner{padding:0 2.5rem}
+  .h-badge{display:none}
+  .h-scroll{left:2.5rem}
+  .h-name{font-size:clamp(3rem,9vw,6rem)}
+  .abt-grid{grid-template-columns:1fr;gap:3rem}
+  .stat-list{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .stat-row{border-right:1px solid var(--edge);padding:1.4rem 1rem}
+  .stat-row:nth-child(2n){border-right:none}
+  .stat-num{font-size:2.8rem}
+  .sk-layout{grid-template-columns:1fr;gap:2.5rem}
+  .exp-layout{grid-template-columns:1fr;gap:2rem}
+  .exp-sidebar{position:static;display:flex;flex-wrap:wrap;gap:.5rem}
+  .exp-tab{padding:.6rem 1rem;border-left:none;border-bottom:2px solid var(--edge);flex:1;min-width:160px}
+  .exp-tab.on,.exp-tab:hover{border-bottom-color:var(--teal2);border-left:none}
+  .edu-grid{grid-template-columns:1fr;gap:3rem}
+  .tm-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .ach-grid{grid-template-columns:repeat(3,1fr)}
+  .gal-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}
+  .gc.c4,.gc.c5,.gc.c3{grid-column:span 2}
+  .gc.c6,.gc.c7{grid-column:span 4}
+  .gc.tall{grid-row:span 1}
+  .gb-fields{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:.8rem;text-align:center;padding:1.8rem 2rem}
+  .ach-wrap{padding:0 2.5rem}
+  #achievements{padding:4rem 0}
+}
+
+/* ── 768px and below ──────────────────────────── */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none !important}
+  .nav-cta{display:none !important}
+  .nav-hamburger{display:flex !important}
+  .sw{padding:4rem 1.5rem}
+  .hero-inner{padding:0 1.5rem}
+  .h-scroll{left:1.5rem;bottom:2rem}
+  .h-eyebrow{margin-bottom:1.2rem}
+  .h-name{font-size:clamp(2.8rem,12vw,5rem)}
+  .h-name .l3{font-size:.16em;letter-spacing:4px}
+  .h-desc{font-size:.85rem;margin-bottom:2rem}
+  .h-btns{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .btn-prime{padding:.85rem 2rem;font-size:.7rem}
+  .abt-grid{grid-template-columns:1fr}
+  .stat-list{grid-template-columns:1fr}
+  .stat-row{border-right:none;padding:1.2rem 0}
+  .stat-num{font-size:2.5rem}
+  .abt-big{font-size:1.25rem}
+  .sk-layout{grid-template-columns:1fr}
+  .pill.xl{font-size:.82rem;padding:.7rem 1.4rem}
+  .pill.lg{font-size:.8rem;padding:.65rem 1.2rem}
+  .exp-sidebar{flex-direction:column}
+  .exp-tab{min-width:unset;width:100%}
+  .exp-panel{padding:1.8rem}
+  .ep-role{font-size:1.5rem}
+  .ep-metrics{gap:1.2rem}
+  .ep-m .mv{font-size:1.8rem}
+  .gal-grid{display:flex;flex-direction:column;gap:.9rem}
+  .gc{height:200px}
+  .gc.tall{height:200px}
+  .gc-title{font-size:1rem}
+  .tm-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:repeat(2,1fr);border-radius:.8rem}
+  .ach-cell{padding:2rem 1rem}
+  .ach-cell:nth-child(2n){border-right:none}
+  .ach-cell:nth-child(3){border-right:1px solid var(--edge)}
+  .ach-cell:nth-child(4){border-right:none}
+  .ach-n{font-size:2.6rem}
+  .gb-fields{grid-template-columns:1fr}
+  .gb-header{flex-direction:column;gap:1rem;align-items:flex-start}
+  .gb-form{padding:1.5rem}
+  .gb-entries{padding:1.5rem}
+  .contact-row{gap:1.8rem}
+  .contact-email-link{font-size:clamp(1.1rem,5vw,2rem)}
+  .mq-wrap{display:none}
+  .st{font-size:clamp(2rem,7vw,3.2rem)}
+  .edu-grid{gap:2rem}
+  .pub-sec-title{font-size:1.2rem}
+  .ach-wrap{padding:0 1.5rem}
+  #achievements{padding:3.5rem 0}
+  footer{padding:1.5rem}
+  .gb-form-bottom{flex-direction:column;align-items:flex-start}
+  .gb-submit{width:100%}
+}
+
+/* ── 480px and below ──────────────────────────── */
+@media(max-width:480px){
+  nav{padding:.9rem 1.2rem}
+  .nav-brand{font-size:1.2rem}
+  .nav-hamburger{display:flex !important}
+  .sw{padding:3.5rem 1.2rem}
+  .hero-inner{padding:0 1.2rem}
+  .h-name{font-size:clamp(2.4rem,13vw,4rem)}
+  .h-name .l3{display:none}
+  .h-eyebrow span{font-size:.6rem;letter-spacing:2px}
+  .h-desc{font-size:.82rem;max-width:100%}
+  .h-btns{width:100%}
+  .btn-prime{width:100%;text-align:center}
+  .btn-ghost{width:100%;text-align:center}
+  .abt-sig{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .stat-num{font-size:2.2rem}
+  .ai-box{padding:1.2rem}
+  .exp-panel{padding:1.4rem}
+  .ep-role{font-size:1.35rem}
+  .ep-metrics{flex-wrap:wrap;gap:1rem}
+  .ep-m .mv{font-size:1.6rem}
+  .tm-card{padding:1.5rem}
+  .tm-text{font-size:.92rem}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .ach-n{font-size:2.2rem}
+  .ach-l{font-size:.62rem}
+  .gb-wrap{border-radius:.8rem}
+  .gb-header{padding:1.4rem}
+  .gb-entries{max-height:350px}
+  .contact-row{flex-direction:column;gap:1.2rem;align-items:center}
+  .sl::before{width:18px}
+  .pub-c{padding:1.2rem}
+}
+
+/* ── Hamburger menu ───────────────────────────── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  cursor:pointer;padding:.5rem;background:none;border:none;
+  z-index:600;position:relative;
+}
+.nav-hamburger span{
+  width:24px;height:2px;background:var(--white);
+  transition:all .35s cubic-bezier(.76,0,.24,1);display:block;border-radius:2px;
+}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(5,13,26,0.98);
+  backdrop-filter:blur(24px);
+  z-index:490;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  transform:translateX(100%);transition:transform .45s cubic-bezier(.76,0,.24,1);
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:300;color:var(--white);
+  text-decoration:none;letter-spacing:3px;transition:color .25s;
+  padding:.3rem 0;border-bottom:1px solid transparent;transition:all .25s;
+}
+.mobile-menu a:hover{color:var(--teal2);border-bottom-color:rgba(0,200,174,0.3)}
+.mobile-menu .mob-cta{
+  margin-top:.5rem;background:var(--teal);color:var(--ink);
+  padding:.85rem 3rem;border-radius:.3rem;
+  font-family:'Outfit',sans-serif;font-size:.75rem;letter-spacing:2px;
+  text-transform:uppercase;font-weight:600;border-bottom:none;
+}
+.mobile-menu .mob-cta:hover{background:var(--teal2);border-bottom:none}
+
+
+/* Staggered mobile menu link animation */
+.mobile-menu a{opacity:0;transform:translateX(30px)}
+.mobile-menu.open a{opacity:1;transform:translateX(0);transition:opacity .4s ease,transform .4s cubic-bezier(.16,1,.3,1),color .25s,border-color .25s}
+.mobile-menu.open a:nth-child(1){transition-delay:.05s}
+.mobile-menu.open a:nth-child(2){transition-delay:.1s}
+.mobile-menu.open a:nth-child(3){transition-delay:.15s}
+.mobile-menu.open a:nth-child(4){transition-delay:.2s}
+.mobile-menu.open a:nth-child(5){transition-delay:.25s}
+.mobile-menu.open a:nth-child(6){transition-delay:.3s}
+.mobile-menu.open a:nth-child(7){transition-delay:.35s}
+.mobile-menu.open a:nth-child(8){transition-delay:.4s}
+.mobile-menu.open a:nth-child(9){transition-delay:.45s}
+/* Mobile menu teal line accent */
+.mobile-menu::before{
+  content:'';position:absolute;left:0;top:15%;bottom:15%;
+  width:1px;background:linear-gradient(to bottom,transparent,var(--teal),transparent);
+  opacity:0.3;
+}
+
+
+/* Google Form Embed */
+.gf-embed-wrap{
+  position:relative;
+  background:var(--navy);
+  padding:0;
+  overflow:hidden;
+}
+.gf-embed-wrap iframe{
+  width:100%;
+  height:900px;
+  border:none;
+  display:block;
+  /* Invert colors to match dark theme */
+  filter:invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.95);
+}
+/* Re-invert images and colored elements inside iframe */
+.gf-embed-wrap iframe img{
+  filter:invert(1) hue-rotate(180deg);
+}
+@media(max-width:768px){
+  .gf-embed-wrap iframe{height:1000px}
+}
+@media(max-width:480px){
+  .gf-embed-wrap iframe{height:1100px}
+}
+
+</style>
+</head>
+<body>
+
+<div id="cur"></div><div id="cur2"></div><div id="cur3"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">N<em>.</em>Anwar</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#gallery">Portfolio</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#achievements">Results</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#gallery" onclick="closeMenu()">Portfolio</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#certifications" onclick="closeMenu()">Certs</a>
+  <a href="#achievements" onclick="closeMenu()">Results</a>
+  <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" class="mob-cta" onclick="closeMenu()">Hire Me</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="scan"></div>
+  <div class="hero-inner">
+    <div class="h-eyebrow"><div class="h-eyebrow-line"></div><span>Marketing Manager · Burton on Trent, UK</span></div>
+    <h1 class="h-name">
+      <span class="l1">Nosheen</span>
+      <span class="l2">Anwar</span>
+      <span class="l3">Brand Strategist · Digital Marketer · Content Creator</span>
+    </h1>
+    <p class="h-desc">15+ years building brands, growing audiences and driving results. Currently leading marketing at <strong>UK Defence Security Services</strong> — where creative vision meets data-driven strategy.</p>
+    <div class="h-btns">
+      <a href="#gallery" class="btn-prime"><span>View Portfolio</span></a>
+      <a href="#contact" class="btn-ghost">Get In Touch →</a>
+    </div>
+  </div>
+  <div class="h-badge">
+    <div class="badge-ring">
+      <div class="badge-inner"><div class="bi-num">15+</div><div class="bi-lbl">Years</div></div>
+    </div>
+  </div>
+  <div class="h-scroll"><div class="h-scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap"><div class="mq-track">
+  <div class="mq-item">Marketing Strategy<div class="mq-dot"></div></div>
+  <div class="mq-item">Brand Identity<div class="mq-dot"></div></div>
+  <div class="mq-item">SEO &amp; PPC<div class="mq-dot"></div></div>
+  <div class="mq-item">Social Media Growth<div class="mq-dot"></div></div>
+  <div class="mq-item">Content Creation<div class="mq-dot"></div></div>
+  <div class="mq-item">AI Creative Tools<div class="mq-dot"></div></div>
+  <div class="mq-item">Graphic Design<div class="mq-dot"></div></div>
+  <div class="mq-item">Campaign Analytics<div class="mq-dot"></div></div>
+  <div class="mq-item">Stakeholder Engagement<div class="mq-dot"></div></div>
+  <div class="mq-item">UK Defence Sector<div class="mq-dot"></div></div>
+  <div class="mq-item">Marketing Strategy<div class="mq-dot"></div></div>
+  <div class="mq-item">Brand Identity<div class="mq-dot"></div></div>
+  <div class="mq-item">SEO &amp; PPC<div class="mq-dot"></div></div>
+  <div class="mq-item">Social Media Growth<div class="mq-dot"></div></div>
+  <div class="mq-item">Content Creation<div class="mq-dot"></div></div>
+  <div class="mq-item">AI Creative Tools<div class="mq-dot"></div></div>
+  <div class="mq-item">Graphic Design<div class="mq-dot"></div></div>
+  <div class="mq-item">Campaign Analytics<div class="mq-dot"></div></div>
+  <div class="mq-item">Stakeholder Engagement<div class="mq-dot"></div></div>
+  <div class="mq-item">UK Defence Sector<div class="mq-dot"></div></div>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sw">
+    <div class="abt-grid">
+      <div>
+        <div class="sl rv"><span>Who I Am</span></div>
+        <div class="abt-big rv d1">A <em>creative strategist</em> who turns brands into movements and data into decisions.</div>
+        <div class="abt-body rv d2">
+          <p>I'm Nosheen Anwar — a commercially driven Marketing Manager with over <strong>15 years of progressive experience</strong> spanning digital marketing, social media management, brand communications and content strategy.</p>
+          <p>Holding a <strong>Global MBA</strong> from Glasgow Caledonian University, advanced degrees in Software Engineering and IT, and a Google-certified Digital Marketing qualification, I bring both analytical rigour and creative flair.</p>
+          <p>As <strong>Director of Pixel Kreator Ltd.</strong>, I lead digital creative projects spanning brand identity, web design, AI-generated visuals and data-driven campaigns — always with measurable results.</p>
+          <p>I also hold valid <strong>SIA Door Supervisor and CCTV licences</strong>, giving me a distinctive understanding of the UK defence and security sector.</p>
+        </div>
+        <div class="abt-sig rv d3">
+          <div class="sig-av">NA</div>
+          <div><div class="sig-name">Nosheen Anwar</div><div class="sig-role">Marketing Manager · UK Defence Services</div></div>
+        </div>
+      </div>
+      <div class="stat-list rvl d2">
+        <div class="stat-row"><div class="stat-num">15+</div><div class="stat-right"><div class="stat-lbl">Years Experience</div><div class="stat-sub">Spanning digital, defence, education and creative sectors</div></div></div>
+        <div class="stat-row"><div class="stat-num">40%</div><div class="stat-right"><div class="stat-lbl">Follower Growth</div><div class="stat-sub">Achieved across social platforms within 8 months</div></div></div>
+        <div class="stat-row"><div class="stat-num">30%</div><div class="stat-right"><div class="stat-lbl">Engagement Growth</div><div class="stat-sub">Delivered within 6 months at GSN Immigration</div></div></div>
+        <div class="stat-row"><div class="stat-num">3</div><div class="stat-right"><div class="stat-lbl">IEEE Publications</div><div class="stat-sub">Peer-reviewed international conference papers</div></div></div>
+        <div class="stat-row"><div class="stat-num">7</div><div class="stat-right"><div class="stat-lbl">Certifications</div><div class="stat-sub">Google, Skillshare, SIA — all verified</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sw">
+    <div class="sk-layout">
+      <div>
+        <div class="sl rv"><span>Capabilities</span></div>
+        <h2 class="st rv d1">Core <em>Skills</em> &amp;<br><strong>Competencies</strong></h2>
+        <div class="sr rv d2"></div>
+        <p class="sk-intro-body rv d3">From building strategy to executing campaigns, I bring a full-stack marketing skill set sharpened across security, immigration, education and digital agency sectors.</p>
+        <div class="ai-box rv d4">
+          <div class="ai-box-title">AI &amp; Creative Technologies</div>
+          <div class="ai-chips">
+            <span class="ai-chip">ChatGPT</span><span class="ai-chip">DeepSeek</span><span class="ai-chip">Midjourney</span>
+            <span class="ai-chip">LUMA</span><span class="ai-chip">Leonardo</span><span class="ai-chip">LTX</span><span class="ai-chip">11ElevenLabs</span>
+          </div>
+        </div>
+      </div>
+      <div class="pill-cloud">
+        <span class="pill xl rv d1"><span class="d"></span>Marketing Strategy</span>
+        <span class="pill lg rv d1"><span class="d"></span>Brand Positioning</span>
+        <span class="pill xl rv d2"><span class="d"></span>Social Media Management</span>
+        <span class="pill rv d2"><span class="d"></span>SEO</span>
+        <span class="pill lg rv d2"><span class="d"></span>PPC Advertising</span>
+        <span class="pill rv d3"><span class="d"></span>Email Marketing</span>
+        <span class="pill xl rv d3"><span class="d"></span>Content Creation</span>
+        <span class="pill lg rv d3"><span class="d"></span>Adobe Photoshop</span>
+        <span class="pill rv d4"><span class="d"></span>Canva</span>
+        <span class="pill lg rv d4"><span class="d"></span>Google Analytics</span>
+        <span class="pill rv d4"><span class="d"></span>Facebook Insights</span>
+        <span class="pill xl rv d4"><span class="d"></span>Campaign Analytics &amp; KPIs</span>
+        <span class="pill lg rv d5"><span class="d"></span>Stakeholder Engagement</span>
+        <span class="pill rv d5"><span class="d"></span>Copywriting</span>
+        <span class="pill lg rv d5"><span class="d"></span>Team Leadership</span>
+        <span class="pill rv d5"><span class="d"></span>Google Suite</span>
+        <span class="pill lg rv d6"><span class="d"></span>MS Office Suite</span>
+        <span class="pill rv d6"><span class="d"></span>HTML &amp; CSS</span>
+        <span class="pill lg rv d6"><span class="d"></span>Market Research</span>
+        <span class="pill rv d6"><span class="d"></span>Competitor Analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sw">
+    <div class="sl rv"><span>Career</span></div>
+    <h2 class="st rv d1">Professional <em>Experience</em></h2>
+    <div class="sr rv d2"></div>
+    <div class="exp-layout">
+      <div class="exp-sidebar rvl">
+        <div class="exp-tab on" data-p="0"><div class="et-date">Nov 2024 – Present</div><div class="et-role">Marketing &amp; Social Media</div><div class="et-org">UK Defence Security Services</div></div>
+        <div class="exp-tab" data-p="1"><div class="et-date">May – Dec 2023</div><div class="et-role">Social Media Manager</div><div class="et-org">GSN Immigration, London</div></div>
+        <div class="exp-tab" data-p="2"><div class="et-date">Apr 2022 – Apr 2023</div><div class="et-role">Social Media Administrator</div><div class="et-org">Defence Security Solutions</div></div>
+        <div class="exp-tab" data-p="3"><div class="et-date">Jan 2016 – Jan 2022</div><div class="et-role">Lecturer — Computer Science</div><div class="et-org">Govt. College, Pakistan</div></div>
+        <div class="exp-tab" data-p="4"><div class="et-date">Jan 2010 – Apr 2021</div><div class="et-role">Office Coordinator</div><div class="et-org">Govt. College, Pakistan</div></div>
+      </div>
+      <div class="rv d2">
+        <div class="exp-panel on" id="ep0">
+          <div class="ep-role">Marketing &amp; Social Media Assistant</div>
+          <div class="ep-org">UK Defence Security Services</div>
+          <div class="ep-date">November 2024 — Present · Remote, UK</div>
+          <div class="ep-body">Leading digital communications and brand presence for a UK defence organisation, ensuring content aligns with operational objectives and defence sector compliance standards.</div>
+          <ul class="ep-list">
+            <li>Developing and implementing the company's marketing communications strategy aligned with business objectives</li>
+            <li>Managing on-brand social media content across multiple platforms maintaining consistent brand positioning</li>
+            <li>Producing marketing materials, digital assets and internal communications to support field operations</li>
+            <li>Coordinating stakeholder communications and managing compliance with UK defence sector standards</li>
+          </ul>
+          <div class="ep-tags"><span class="ep-tag">Defence Sector</span><span class="ep-tag">Brand Strategy</span><span class="ep-tag">Content Management</span><span class="ep-tag">Compliance</span></div>
+        </div>
+        <div class="exp-panel" id="ep1">
+          <div class="ep-role">Social Media Manager</div>
+          <div class="ep-org">GSN Immigration</div>
+          <div class="ep-date">May 2023 — December 2023 · London, UK</div>
+          <div class="ep-body">Developed and executed a comprehensive cross-platform digital strategy delivering significant measurable growth across all channels within 6 months.</div>
+          <ul class="ep-list">
+            <li>Developed multi-platform strategy across Facebook, Instagram, LinkedIn &amp; Twitter aligned with growth objectives</li>
+            <li>Managed SEO-optimised content, paid social campaigns and organic community management</li>
+            <li>Conducted audience research and competitor analysis to identify market opportunities</li>
+            <li>Monitored ROI and KPIs via Google Analytics and Facebook Insights with data-driven optimisations</li>
+          </ul>
+          <div class="ep-metrics">
+            <div class="ep-m"><div class="mv">30%</div><div class="ml">Engagement Growth</div></div>
+            <div class="ep-m"><div class="mv">40%</div><div class="ml">Follower Growth</div></div>
+            <div class="ep-m"><div class="mv">25%</div><div class="ml">Higher Web Traffic</div></div>
+          </div>
+          <div class="ep-tags"><span class="ep-tag">Paid Social</span><span class="ep-tag">Google Analytics</span><span class="ep-tag">Content Strategy</span><span class="ep-tag">SEO</span></div>
+        </div>
+        <div class="exp-panel" id="ep2">
+          <div class="ep-role">Office Assistant &amp; Social Media Administrator</div>
+          <div class="ep-org">Defence Security Solutions</div>
+          <div class="ep-date">April 2022 — April 2023 · London, UK</div>
+          <div class="ep-body">Managed brand communications and social media strategy for a security services firm within a UK defence sector environment.</div>
+          <ul class="ep-list">
+            <li>Managed brand messaging across Facebook and LinkedIn achieving 15% engagement increase</li>
+            <li>Executed digital marketing activities including social media, email and content scheduling</li>
+            <li>Produced recruitment marketing materials boosting company visibility by 20%</li>
+            <li>Analysed campaign performance metrics and adjusted strategies to maximise ROI</li>
+          </ul>
+          <div class="ep-metrics">
+            <div class="ep-m"><div class="mv">15%</div><div class="ml">Engagement Growth</div></div>
+            <div class="ep-m"><div class="mv">20%</div><div class="ml">Efficiency Gain</div></div>
+          </div>
+          <div class="ep-tags"><span class="ep-tag">Security Sector</span><span class="ep-tag">Recruitment Marketing</span><span class="ep-tag">Analytics</span></div>
+        </div>
+        <div class="exp-panel" id="ep3">
+          <div class="ep-role">Lecturer — Computer Science</div>
+          <div class="ep-org">Govt. Viqar-un-Nisa Post Graduate College for Women</div>
+          <div class="ep-date">January 2016 — January 2022 · Rawalpindi, Pakistan</div>
+          <div class="ep-body">Taught Computer Science at undergraduate and postgraduate level to a college of 6,000+ students, producing educational content and outreach materials.</div>
+          <ul class="ep-list">
+            <li>Taught Software Engineering, Web Design and MS Office at BA/BSc and BS level</li>
+            <li>Developed lesson plans and materials improving student performance by 15%</li>
+            <li>Achieved 95% in FSc Computer Science in 2019 reflecting strong technical expertise</li>
+            <li>Published 3 IEEE peer-reviewed research papers (2019–2020)</li>
+          </ul>
+          <div class="ep-metrics">
+            <div class="ep-m"><div class="mv">15%</div><div class="ml">Student Improvement</div></div>
+            <div class="ep-m"><div class="mv">95%</div><div class="ml">CS Exam Score</div></div>
+            <div class="ep-m"><div class="mv">6K+</div><div class="ml">Students</div></div>
+          </div>
+          <div class="ep-tags"><span class="ep-tag">Content Development</span><span class="ep-tag">Web Design</span><span class="ep-tag">Research</span></div>
+        </div>
+        <div class="exp-panel" id="ep4">
+          <div class="ep-role">Office Coordinator — Computer Department</div>
+          <div class="ep-org">Govt. Viqar-un-Nisa Post Graduate College for Women</div>
+          <div class="ep-date">January 2010 — April 2021 · Rawalpindi, Pakistan</div>
+          <div class="ep-body">Managed all operations for one of Pakistan's largest women's colleges, implementing enrolment campaigns and coordinating institutional events.</div>
+          <ul class="ep-list">
+            <li>Introduced new courses aligned with industry trends driving significant enrolment growth</li>
+            <li>Organised departmental events, open days and admissions campaigns for 6,000+ student body</li>
+            <li>Compiled monthly financial and KPI reports developing strong analytical skills</li>
+            <li>Managed admissions, timetabling, financial records and staff recruitment</li>
+          </ul>
+          <div class="ep-tags"><span class="ep-tag">Event Coordination</span><span class="ep-tag">Data Reporting</span><span class="ep-tag">Enrolment Growth</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="sw">
+    <div class="sl rv"><span>My Work</span></div>
+    <h2 class="st rv d1">Portfolio <em>Gallery</em></h2>
+    <div class="sr rv d2"></div>
+    <div class="gal-filter rv d3">
+      <button class="gf on" data-f="all">All Work</button>
+      <button class="gf" data-f="brand">Brand &amp; Logo</button>
+      <button class="gf" data-f="social">Social Media</button>
+      <button class="gf" data-f="design">Graphic Design</button>
+      <button class="gf" data-f="web">Web Design</button>
+      <button class="gf" data-f="doc">CVs &amp; Docs</button>
+      <button class="gf" data-f="ai">AI Creative</button>
+      <button class="gf" data-f="data">Excel &amp; Data</button>
+      <button class="gf" data-f="video">Animation</button>
+    </div>
+    <div class="gal-grid rv d4" id="gg">
+      <div class="gc c4 tall" data-f="social">
+        <div class="gc-bg bg-s1"><svg class="gp" viewBox="0 0 320 520"><circle cx="160" cy="260" r="200" fill="none" stroke="#00c8ae" stroke-width="0.5"/><circle cx="160" cy="260" r="130" fill="none" stroke="#00c8ae" stroke-width="0.4"/><line x1="0" y1="260" x2="320" y2="260" stroke="#00c8ae" stroke-width="0.3"/><line x1="160" y1="0" x2="160" y2="520" stroke="#00c8ae" stroke-width="0.3"/></svg></div>
+        <div class="gc-ico">📱</div>
+        <div class="gc-ov"><div class="gc-cat">Social Media Campaign</div><div class="gc-title">GSN Immigration — Full Digital Growth Strategy</div><div class="gc-sub">Cross-platform strategy: Facebook, Instagram, LinkedIn &amp; Twitter.</div><span class="gc-badge">+30% Engagement · +40% Followers</span></div>
+      </div>
+      <div class="gc c3" data-f="brand">
+        <div class="gc-bg bg-b1"><svg class="gp" viewBox="0 0 240 260"><polygon points="120,20 220,80 220,180 120,240 20,180 20,80" fill="none" stroke="#d4a843" stroke-width="0.5"/><circle cx="120" cy="130" r="40" fill="none" stroke="#00c8ae" stroke-width="0.4"/></svg></div>
+        <div class="gc-ico">🔷</div>
+        <div class="gc-ov"><div class="gc-cat">Brand Identity</div><div class="gc-title">Pixel Kreator Ltd. — Brand System</div><div class="gc-sub">Logo, guidelines, colour palette &amp; typography.</div><span class="gc-badge">Canva · Photoshop</span></div>
+      </div>
+      <div class="gc c5" data-f="design">
+        <div class="gc-bg bg-d1"><svg class="gp" viewBox="0 0 400 260"><rect x="40" y="30" width="320" height="200" fill="none" stroke="#9b8fd4" stroke-width="0.5"/><line x1="40" y1="130" x2="360" y2="130" stroke="#d4a843" stroke-width="0.4"/><line x1="200" y1="30" x2="200" y2="230" stroke="#00c8ae" stroke-width="0.4"/></svg></div>
+        <div class="gc-ico">🎨</div>
+        <div class="gc-ov"><div class="gc-cat">Graphic Design</div><div class="gc-title">Promotional Flyers, Posters &amp; Collateral</div><div class="gc-sub">Event flyers, posters and branded marketing materials.</div><span class="gc-badge">Canva · Adobe Photoshop</span></div>
+      </div>
+      <div class="gc c7" data-f="web">
+        <div class="gc-bg bg-w1"><svg class="gp" viewBox="0 0 560 260"><rect x="20" y="20" width="520" height="220" rx="8" fill="none" stroke="#00c8ae" stroke-width="0.5"/><rect x="20" y="20" width="520" height="38" fill="none" stroke="#d4a843" stroke-width="0.4"/><line x1="60" y1="39" x2="60" y2="58" stroke="#00c8ae" stroke-width="1.5" opacity="0.5"/><line x1="82" y1="39" x2="82" y2="58" stroke="#d4a843" stroke-width="1.5" opacity="0.5"/><line x1="104" y1="39" x2="104" y2="58" stroke="#888" stroke-width="1.5" opacity="0.4"/></svg></div>
+        <div class="gc-ico">🌐</div>
+        <div class="gc-ov"><div class="gc-cat">Web Design</div><div class="gc-title">Responsive Business Websites</div><div class="gc-sub">Business websites for Pixel Kreator clients — HTML, CSS &amp; CMS.</div><span class="gc-badge">HTML · CSS · WordPress</span></div>
+      </div>
+      <div class="gc c5" data-f="ai">
+        <div class="gc-bg bg-a1"><svg class="gp" viewBox="0 0 400 260"><circle cx="200" cy="130" r="110" fill="none" stroke="#d4a843" stroke-width="0.5"/><circle cx="200" cy="130" r="65" fill="none" stroke="#00c8ae" stroke-width="0.4"/><circle cx="200" cy="130" r="22" fill="none" stroke="#d4a843" stroke-width="0.5"/></svg></div>
+        <div class="gc-ico">✨</div>
+        <div class="gc-ov"><div class="gc-cat">AI Creative</div><div class="gc-title">AI-Generated Visual Content &amp; Campaigns</div><div class="gc-sub">Marketing visuals using Midjourney, Leonardo, LUMA &amp; LTX.</div><span class="gc-badge">Midjourney · Leonardo · LUMA</span></div>
+      </div>
+      <div class="gc c3" data-f="doc">
+        <div class="gc-bg bg-c1"><svg class="gp" viewBox="0 0 240 260"><rect x="50" y="20" width="140" height="180" rx="4" fill="none" stroke="#00c8ae" stroke-width="0.5"/><line x1="70" y1="58" x2="170" y2="58" stroke="#d4a843" stroke-width="0.5"/><line x1="70" y1="78" x2="170" y2="78" stroke="#00c8ae" stroke-width="0.3"/><line x1="70" y1="94" x2="155" y2="94" stroke="#00c8ae" stroke-width="0.3"/><line x1="70" y1="110" x2="162" y2="110" stroke="#00c8ae" stroke-width="0.3"/></svg></div>
+        <div class="gc-ico">📄</div>
+        <div class="gc-ov"><div class="gc-cat">CVs &amp; Documents</div><div class="gc-title">Professional CVs, Reports &amp; Word Docs</div><div class="gc-sub">Beautifully formatted professional documents for clients.</div><span class="gc-badge">MS Word · Advanced Layout</span></div>
+      </div>
+      <div class="gc c4" data-f="video">
+        <div class="gc-bg bg-v1"><svg class="gp" viewBox="0 0 320 260"><circle cx="160" cy="130" r="90" fill="none" stroke="#e05555" stroke-width="0.5"/><polygon points="140,100 195,130 140,160" fill="none" stroke="#d4a843" stroke-width="1"/></svg></div>
+        <div class="gc-ico">🎬</div>
+        <div class="gc-ov"><div class="gc-cat">Animation &amp; Video</div><div class="gc-title">Animated Cartoon YouTube Channel</div><div class="gc-sub">Founded and produced — scripting, character design &amp; production.</div><span class="gc-badge">YouTube · Animation</span></div>
+      </div>
+      <div class="gc c4" data-f="data">
+        <div class="gc-bg bg-e1"><svg class="gp" viewBox="0 0 320 260"><rect x="30" y="30" width="260" height="200" rx="4" fill="none" stroke="#00c8ae" stroke-width="0.5"/><line x1="30" y1="68" x2="290" y2="68" stroke="#d4a843" stroke-width="0.4"/><line x1="110" y1="30" x2="110" y2="230" stroke="#00c8ae" stroke-width="0.3"/><line x1="190" y1="30" x2="190" y2="230" stroke="#00c8ae" stroke-width="0.3"/><rect x="48" y="98" width="28" height="112" fill="#00c8ae" opacity="0.14"/><rect x="128" y="128" width="28" height="82" fill="#d4a843" opacity="0.14"/><rect x="208" y="84" width="28" height="126" fill="#00c8ae" opacity="0.14"/></svg></div>
+        <div class="gc-ico">📊</div>
+        <div class="gc-ov"><div class="gc-cat">Data &amp; Excel</div><div class="gc-title">Dashboards, Reports &amp; Data Analysis</div><div class="gc-sub">Excel dashboards, financial reports and analytical models.</div><span class="gc-badge">Excel · Data Analysis</span></div>
+      </div>
+      <div class="gc c4" data-f="social">
+        <div class="gc-bg" style="background:linear-gradient(135deg,#0d1b2e,#1b3060)"><svg class="gp" viewBox="0 0 320 260"><path d="M30,130 Q100,50 160,130 Q220,210 290,130" fill="none" stroke="#00c8ae" stroke-width="0.5"/><circle cx="160" cy="130" r="28" fill="none" stroke="#d4a843" stroke-width="0.5"/></svg></div>
+        <div class="gc-ico">🛡️</div>
+        <div class="gc-ov"><div class="gc-cat">Social Media</div><div class="gc-title">UK Defence Security Services</div><div class="gc-sub">On-brand content strategy for a UK defence organisation.</div><span class="gc-badge">Defence · Compliance</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & PUBLICATIONS -->
+<section id="education">
+  <div class="sw">
+    <div class="sl rv"><span>Academic Background</span></div>
+    <h2 class="st rv d1">Education &amp; <em>Publications</em></h2>
+    <div class="sr rv d2"></div>
+    <div class="edu-grid">
+      <div class="rvl">
+        <div class="edu-tl">
+          <div class="edu-item"><div class="edu-yr">2022 – 2023</div><div class="edu-deg">Global MBA</div><div class="edu-uni">Glasgow Caledonian University, London, UK</div></div>
+          <div class="edu-item"><div class="edu-yr">2017 – 2019</div><div class="edu-deg">MSc Software Engineering</div><div class="edu-uni">PMAS Arid Agriculture University, Pakistan</div></div>
+          <div class="edu-item"><div class="edu-yr">2014 – 2016</div><div class="edu-deg">Master of Information Technology</div><div class="edu-uni">PMAS Arid Agriculture University, Pakistan</div></div>
+          <div class="edu-item"><div class="edu-yr">2015</div><div class="edu-deg">Master of Education (M.Ed.)</div><div class="edu-uni">Allama Iqbal Open University, Pakistan</div></div>
+          <div class="edu-item"><div class="edu-yr">2011</div><div class="edu-deg">MA Political Science</div><div class="edu-uni">University of the Punjab, Lahore, Pakistan</div></div>
+          <div class="edu-item"><div class="edu-yr">2010</div><div class="edu-deg">Bachelor of Education (B.Ed.)</div><div class="edu-uni">Allama Iqbal Open University, Pakistan</div></div>
+          <div class="edu-item"><div class="edu-yr">2007</div><div class="edu-deg">BA (Hons)</div><div class="edu-uni">Govt. Viqar-un-Nisa College for Women, Rawalpindi</div></div>
+          <div class="edu-item"><div class="edu-yr">2008</div><div class="edu-deg">Post Graduate Diploma in IT</div><div class="edu-uni">Govt. Viqar-un-Nisa College, Rawalpindi</div></div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="pub-sec-title">Peer-Reviewed IEEE Publications</div>
+        <div class="pub-c"><span class="pub-badge">IEEE · INMIC 2019</span><div class="pub-t">"A New Approach for Agile Product Line Engineering"</div><div class="pub-conf">A. Kiani, Y. Hafeez, <strong style="color:var(--teal2)">N. Anwar</strong> and G. Abbas · 22nd INMIC, Islamabad, 2019, pp. 1–7</div><div class="pub-doi">DOI: 10.1109/INMIC48123.2019.9022798</div></div>
+        <div class="pub-c"><span class="pub-badge">IEEE · iCoMET 2020</span><div class="pub-t">"Extending The Scrum to Introduce The Concept of Systematic Reusability"</div><div class="pub-conf">A. A. Kiani, Y. Hafeez, M. Aqib, S. Ali, J. Javed and <strong style="color:var(--teal2)">N. Anwar</strong> · 3rd iCoMET, Sukkur, 2020, pp. 1–6</div><div class="pub-doi">DOI: 10.1109/iCoMET48670.2020.9074066</div></div>
+        <div class="pub-c"><span class="pub-badge">IEEE · MACS 2019</span><div class="pub-t">"Use of Knowledge Management and SCRUM Techniques to Increase Reusability in Software Development"</div><div class="pub-conf">T. Jabbar, Y. Hafeez, A. A. Kiani, <strong style="color:var(--teal2)">N. Anwar</strong> and J. Javaid · 13th MACS, Karachi, 2019, pp. 1–5</div><div class="pub-doi">DOI: 10.1109/MACS48846.2019.9024803</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="sw">
+    <div class="sl rv"><span>Credentials</span></div>
+    <h2 class="st rv d1">Licences &amp; <em>Certifications</em></h2>
+    <div class="sr rv d2"></div>
+    <div class="cert-grid">
+      <div class="cert-grp rv d1"><div class="cg-ico">🔒</div><div class="cg-t">Regulatory Licences</div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">SIA Door Supervisor Licence</div><div class="ci-meta">Security Industry Authority, UK</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">CCTV Operator Licence</div><div class="ci-meta">Security Industry Authority, UK</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Full UK Driving Licence</div><div class="ci-meta">DVLA, United Kingdom</div></div></div>
+      </div>
+      <div class="cert-grp rv d2"><div class="cg-ico">📢</div><div class="cg-t">Digital Marketing</div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Fundamentals of Digital Marketing</div><div class="ci-meta">Google Digital Garage · Mar 2025 · ID: 197546163</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Name Your Brand &amp; Design a Strong Logo with ChatGPT + Canva</div><div class="ci-meta">Skillshare · Dec 2025 · ID: D6DD5W0D2SB7</div></div></div>
+      </div>
+      <div class="cert-grp rv d3"><div class="cg-ico">🤖</div><div class="cg-t">AI &amp; Productivity — Google Nov 2025</div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Google Prompting Essentials</div><div class="ci-meta">ID: Z6LD7X60EJXP</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Use AI as a Creative or Expert Partner</div><div class="ci-meta">ID: EXEGX23C32G5</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Speed Up Data Analysis &amp; Presentation Building</div><div class="ci-meta">ID: QKN3I297SVB0</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Design Prompts for Everyday Work Tasks</div><div class="ci-meta">ID: 00P92QXYJRG0</div></div></div>
+        <div class="ci"><div class="ci-dot"></div><div><div class="ci-name">Start Writing Prompts like a Pro</div><div class="ci-meta">ID: RGUI56FKXFXJ</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="ach-wrap">
+    <div class="sl rv" style="justify-content:center"><span>By The Numbers</span></div>
+    <h2 class="st rv d1" style="text-align:center">Proven <em>Results</em></h2>
+    <div class="ach-grid rv d2">
+      <div class="ach-cell"><div class="ach-n">30<span class="ach-s">%</span></div><div class="ach-l">Engagement Growth in 6 months</div></div>
+      <div class="ach-cell"><div class="ach-n">40<span class="ach-s">%</span></div><div class="ach-l">Follower Growth across platforms</div></div>
+      <div class="ach-cell"><div class="ach-n">25<span class="ach-s">%</span></div><div class="ach-l">Higher Website Traffic via paid social</div></div>
+      <div class="ach-cell"><div class="ach-n">20<span class="ach-s">%</span></div><div class="ach-l">Workflow Efficiency Improvement</div></div>
+      <div class="ach-cell"><div class="ach-n">3</div><div class="ach-l">IEEE Published Papers</div></div>
+      <div class="ach-cell"><div class="ach-n">6K<span class="ach-s">+</span></div><div class="ach-l">Students Taught &amp; Mentored</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="sw">
+    <div class="sl rv"><span>Social Proof</span></div>
+    <h2 class="st rv d1">Testimonials &amp; <em>Guestbook</em></h2>
+    <div class="sr rv d2"></div>
+
+    <!-- Featured Testimonials -->
+    <div class="tm-grid">
+      <div class="tm-card rv d1">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">Nosheen transformed our social media presence completely. Within six months she grew our engagement by 30% and our follower base by 40%. Her strategic thinking and creative execution are genuinely impressive — she doesn't just post content, she builds communities.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-teal">AK</div>
+          <div>
+            <div class="tm-name">Ahmed Khan</div>
+            <div class="tm-role">Director, GSN Immigration · London</div>
+            <span class="tm-relation tm-rel-employer">Employer</span>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card rv d2">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">As a student in Nosheen's Computer Science class, she had a rare gift — she made complex technical concepts feel approachable and exciting. Her lessons were always well-prepared and she genuinely cared about every student's success. A truly inspiring educator.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-gold">SR</div>
+          <div>
+            <div class="tm-name">Sana Raza</div>
+            <div class="tm-role">BSc Computer Science Graduate · Rawalpindi</div>
+            <span class="tm-relation tm-rel-student">Former Student</span>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card rv d3">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">Working alongside Nosheen at Defence Security Solutions was a pleasure. She brought structure, creativity and professionalism to everything she touched. Her social media strategy increased our LinkedIn engagement significantly and her administrative support was exceptional.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-blue">JM</div>
+          <div>
+            <div class="tm-name">James Mitchell</div>
+            <div class="tm-role">Operations Manager · Defence Security Solutions</div>
+            <span class="tm-relation tm-rel-colleague">Colleague</span>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card rv d2">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">Nosheen co-authored three IEEE research papers with our team and her contribution to requirement engineering and Scrum methodology was invaluable. She approaches academic work with the same rigour she brings to her professional projects — thorough, articulate and innovative.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-gold">YH</div>
+          <div>
+            <div class="tm-name">Prof. Yasser Hafeez</div>
+            <div class="tm-role">Research Supervisor · PMAS University</div>
+            <span class="tm-relation tm-rel-peer" style="background:rgba(155,100,210,0.1);border-color:rgba(155,100,210,0.2);color:#c09ae8">Research Peer</span>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card rv d3">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">Nosheen's marketing support at UK Defence Security Services has been outstanding. She understands our brand voice, handles all communications with professionalism, and always delivers on time. Her ability to work in a compliance-driven environment is a real asset.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-teal">DT</div>
+          <div>
+            <div class="tm-name">David Thompson</div>
+            <div class="tm-role">Senior Manager · UK Defence Security Services</div>
+            <span class="tm-relation tm-rel-employer">Current Employer</span>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card rv d4">
+        <span class="tm-quote-mark">"</span>
+        <div class="tm-stars">★★★★★</div>
+        <p class="tm-text">Nosheen produced CVs and professional documents for several of our team members. The quality was remarkable — beautifully formatted, clearly written and tailored perfectly to each individual. She has a real eye for design and a strong command of professional communication.</p>
+        <div class="tm-author">
+          <div class="tm-avatar tm-av-blue">FN</div>
+          <div>
+            <div class="tm-name">Fatima Nadeem</div>
+            <div class="tm-role">HR Consultant · Pixel Kreator Client</div>
+            <span class="tm-relation tm-rel-colleague">Client</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUESTBOOK -->
+    <div class="gb-wrap rv d3">
+      <div class="gb-header">
+        <div class="gb-header-left">
+          <div class="gb-title">Leave a Message</div>
+          <div class="gb-sub">Colleagues, students, employers and collaborators — share your experience working with Nosheen</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:500">Verified</div>
+          <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">Google Forms</div>
+        </div>
+      </div>
+      <div class="gf-embed-wrap">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeXiq0gLd7EoRqWoSJnbhuavaILuONRfEZZsSr1ZfFNGUD5Mw/viewform?embedded=true&dark=true" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          title="Leave a Message for Nosheen Anwar">
+          Loading…
+        </iframe>
+      </div>
+      <div class="gb-ai-badge">
+        <div class="gb-ai-dot"></div>
+        Responses save directly to Google Sheets · Reviewed before appearing on this page
+      </div>
+      <!-- APPROVED MESSAGES DISPLAY -->
+      <div id="gb-approved" style="padding:2rem 2.5rem;border-top:1px solid var(--edge)">
+        <div style="font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:1.5rem">
+          ✓ Approved Messages
+        </div>
+        <div id="gb-entries" style="display:flex;flex-direction:column;gap:1rem">
+          <div id="gb-empty" style="text-align:center;padding:2rem;color:var(--muted2);font-size:.85rem">
+            No approved messages yet — be the first!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sw">
+    <div class="contact-wrap">
+      <div class="sl rv" style="justify-content:center"><span>Let's Work Together</span></div>
+      <h2 class="st rv d1" style="text-align:center">Ready to Create<br><em>Something Great?</em></h2>
+      <p class="rv d2" style="color:var(--muted);font-size:.88rem;line-height:2;margin-top:1rem">Based in Burton on Trent, UK — available for on-site and remote opportunities across the United Kingdom.</p>
+      <a href="mailto:nosheen.anwaar@gmail.com" class="contact-email-link rv d3">nosheen.anwaar@gmail.com</a>
+      <div class="contact-row rv d4">
+        <div class="contact-col"><div class="cl">Phone</div><div class="cv">07916 268 640</div></div>
+        <div class="contact-col"><div class="cl">Location</div><div class="cv">Burton on Trent, UK</div></div>
+        <div class="contact-col"><div class="cl">Languages</div><div class="cv">English · Urdu</div></div>
+        <div class="contact-col"><div class="cl">Availability</div><div class="cv">Open to Opportunities</div></div>
+      </div>
+      <div style="margin-top:3rem" class="rv d5"><a href="#gallery" class="btn-prime"><span>View Portfolio</span></a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-b">N<em>.</em>Anwar — Marketing Manager</div>
+  <div class="ft-r">© 2025 Nosheen Anwar · <span>Burton on Trent, UK</span></div>
+</footer>
+
+<script>
+// CURSOR
+const C=document.getElementById('cur'),C2=document.getElementById('cur2'),C3=document.getElementById('cur3');
+let mx=0,my=0,lx=0,ly=0,l2x=0,l2y=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  C.style.left=mx+'px';C.style.top=my+'px';
+});
+(function tick(){
+  lx+=(mx-lx)*0.14;ly+=(my-ly)*0.14;
+  l2x+=(mx-l2x)*0.06;l2y+=(my-l2y)*0.06;
+  C2.style.left=lx+'px';C2.style.top=ly+'px';
+  C3.style.left=l2x+'px';C3.style.top=l2y+'px';
+  requestAnimationFrame(tick);
+})();
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
+  let cur='';
+  document.querySelectorAll('section[id]').forEach(s=>{if(scrollY>=s.offsetTop-220)cur=s.id});
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+cur?'var(--teal2)':'';
+  });
+});
+
+// HERO CANVAS
+const cv=document.getElementById('hero-canvas'),ctx=cv.getContext('2d');
+let W,H,stars=[];
+const mouse={x:0,y:0};
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;mouse.x=W/2;mouse.y=H/2}
+resize();window.addEventListener('resize',resize);
+document.getElementById('hero').addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
+
+class Star{
+  constructor(){this.reset(true)}
+  reset(init){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.z=init?Math.random()*1400+100:Math.random()*400+800;
+    this.speed=Math.random()*.55+.18;
+    this.c=Math.random()>.72?'#00c8ae':Math.random()>.5?'#d4a843':'#2a4a6a';
+    this.s=Math.random()*1.4+.3;
+  }
+  update(){
+    this.z-=this.speed;
+    const dx=(mouse.x-W/2)*.000025,dy=(mouse.y-H/2)*.000025;
+    this.x+=dx;this.y+=dy;
+    if(this.z<2||this.x<-40||this.x>W+40||this.y<-40||this.y>H+40)this.reset(false);
+  }
+  draw(){
+    const sc=700/Math.max(this.z,1);
+    const sx=(this.x-W/2)*sc+W/2,sy=(this.y-H/2)*sc+H/2;
+    if(sx<-5||sx>W+5||sy<-5||sy>H+5)return;
+    const a=Math.min(.75,(1400-this.z)/900);
+    ctx.beginPath();ctx.arc(sx,sy,this.s*(700/Math.max(this.z,100)),0,Math.PI*2);
+    ctx.fillStyle=this.c;ctx.globalAlpha=a;ctx.fill();ctx.globalAlpha=1;
+  }
+}
+for(let i=0;i<260;i++)stars.push(new Star());
+
+function drawGrid(){
+  ctx.save();ctx.strokeStyle='rgba(0,200,174,0.022)';ctx.lineWidth=1;
+  const g=90;
+  for(let x=0;x<W;x+=g){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(let y=0;y<H;y+=g){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+  ctx.restore();
+}
+function drawLines(){
+  const vis=stars.filter(s=>s.z<380).slice(0,55);
+  for(let i=0;i<vis.length;i++)for(let j=i+1;j<vis.length;j++){
+    const a=vis[i],b=vis[j];
+    const sa=700/a.z,sb=700/b.z;
+    const ax=(a.x-W/2)*sa+W/2,ay=(a.y-H/2)*sa+H/2;
+    const bx=(b.x-W/2)*sb+W/2,by=(b.y-H/2)*sb+H/2;
+    const d=Math.hypot(ax-bx,ay-by);
+    if(d<110){ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.strokeStyle='#00c8ae';ctx.globalAlpha=(1-d/110)*0.09;ctx.lineWidth=.5;ctx.stroke();ctx.globalAlpha=1}
+  }
+}
+(function loop(){ctx.clearRect(0,0,W,H);drawGrid();stars.forEach(s=>{s.update();s.draw()});drawLines();requestAnimationFrame(loop)})();
+
+// REVEAL
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.11});
+document.querySelectorAll('.rv,.rvl').forEach(el=>ro.observe(el));
+
+// EXPERIENCE TABS
+document.querySelectorAll('.exp-tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    const p=t.dataset.p;
+    document.querySelectorAll('.exp-tab').forEach(x=>x.classList.remove('on'));
+    document.querySelectorAll('.exp-panel').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('ep'+p).classList.add('on');
+  });
+});
+
+// GALLERY FILTER
+document.querySelectorAll('.gf').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.gf').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const f=b.dataset.f;
+    document.querySelectorAll('.gc').forEach(c=>{
+      const show=f==='all'||c.dataset.f===f;
+      c.style.display=show?'':'none';
+      if(show){c.style.opacity='0';c.style.transform='scale(.95)';setTimeout(()=>{c.style.transition='opacity .4s,transform .4s';c.style.opacity='1';c.style.transform='scale(1)'},10)}
+    });
+  });
+});
+
+// CURSOR EXPAND ON HOVER
+document.querySelectorAll('a,button,.gc,.exp-tab,.stat-row,.ach-cell').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{C2.style.width='60px';C2.style.height='60px';C2.style.borderColor='var(--teal2)'});
+  el.addEventListener('mouseleave',()=>{C2.style.width='38px';C2.style.height='38px';C2.style.borderColor='rgba(0,200,174,0.45)'});
+});
+
+// ═══════════════════════════════════════════════════════
+// GUESTBOOK — Google Sheets Integration
+// Replace SCRIPT_URL below with your Apps Script Web App URL
+// ═══════════════════════════════════════════════════════
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyc8NNrFWPH4nVWNOsdVAblt839QjV8TAmCPKLljKpFP5FdP1xnkTg-qOepZ7yjLZAF/exec';
+// Sheet now uses Form_Responses tab (created by Google Forms)
+
+const COLORS = ['tm-av-teal','tm-av-gold','tm-av-blue'];
+const REL_MAP = {
+  employer:'Employer / Manager', colleague:'Colleague',
+  student:'Former Student', client:'Client',
+  peer:'Research Peer', other:'Other'
+};
+const REL_STYLE = {
+  employer:'background:rgba(0,200,174,0.1);border:1px solid rgba(0,200,174,0.2);color:var(--teal2)',
+  colleague:'background:rgba(100,149,237,0.1);border:1px solid rgba(100,149,237,0.2);color:#6495ed',
+  student:'background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.2);color:var(--gold2)',
+  client:'background:rgba(46,196,176,0.1);border:1px solid rgba(46,196,176,0.2);color:#2ec4b0',
+  peer:'background:rgba(155,100,210,0.1);border:1px solid rgba(155,100,210,0.2);color:#c09ae8',
+  other:'background:rgba(90,122,154,0.1);border:1px solid rgba(90,122,154,0.2);color:var(--muted)'
+};
+
+function getInitials(name){
+  return name.trim().split(' ').slice(0,2).map(w=>w[0]?.toUpperCase()||'').join('')||'?';
+}
+
+function renderEntries(entries){
+  const container = document.getElementById('gb-entries');
+  const empty = document.getElementById('gb-empty');
+  document.getElementById('gb-count').textContent = entries.length;
+  container.querySelectorAll('.gb-entry').forEach(e=>e.remove());
+  if(!entries.length){ empty.style.display='block'; return; }
+  empty.style.display = 'none';
+  [...entries].reverse().forEach((e,i)=>{
+    const col  = COLORS[i % COLORS.length];
+    // Google Forms returns full text like "Colleague" not keys
+    const relKey = Object.keys(REL_MAP).find(k => 
+      REL_MAP[k].toLowerCase() === (e.relationship||'').toLowerCase()
+    ) || 'other';
+    const rel  = REL_MAP[relKey] || e.relationship || 'Guest';
+    const rs   = REL_STYLE[relKey] || REL_STYLE.other;
+    const div  = document.createElement('div');
+    div.className = 'gb-entry';
+    div.innerHTML = `
+      <div class="gb-entry-av ${col}">${getInitials(e.name)}</div>
+      <div class="gb-entry-body">
+        <div class="gb-entry-top">
+          <div>
+            <div class="gb-entry-name">${e.name}</div>
+            <div style="font-size:.72rem;color:var(--muted);margin-top:.1rem">${e.role||'Guest'}</div>
+          </div>
+          <div class="gb-entry-meta">
+            <span class="gb-entry-rel" style="${rs}">${rel}</span>
+            <span class="gb-entry-time">${e.date}</span>
+          </div>
+        </div>
+        <div class="gb-entry-msg">"${e.message}"</div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+// ── LOAD entries from Google Sheets CSV (no CORS issues!) ──
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSOV11Y4Xn5I4Ap8FRsAzaTXk81dS5Vgk2xO26MiZen1IE4g6LjNLbArwFxSeo1ynIIUQ77HINUDfjH/pub?gid=1544622802&single=true&output=csv';
+
+async function loadEntries(){
+  try{
+    const res = await fetch(CSV_URL);
+    const text = await res.text();
+    const rows = text.trim().split('\n').slice(1); // skip header row
+    const entries = [];
+    rows.forEach(row => {
+      // Parse CSV row properly
+      const cols = [];
+      let cur = '', inQ = false;
+      for(let c of row){
+        if(c==='"') inQ=!inQ;
+        else if(c===',' && !inQ){ cols.push(cur.trim()); cur=''; }
+        else cur+=c;
+      }
+      cols.push(cur.trim());
+      const approved = (cols[5]||'').toUpperCase().trim();
+      if(cols[1] && approved === 'YES'){
+        entries.push({
+          date:         cols[0] ? new Date(cols[0]).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '',
+          name:         cols[1],
+          role:         cols[2],
+          relationship: cols[3],
+          message:      cols[4]
+        });
+      }
+    });
+    renderEntries(entries);
+  } catch(err){
+    console.log('CSV load error:', err.message);
+    renderEntries([]);
+  }
+}
+
+// ── SUBMIT comment → Google Sheet ───────────────────────
+async function submitEntry(){
+  const name = document.getElementById('gb-name').value.trim();
+  const role = document.getElementById('gb-role').value.trim();
+  const rel  = document.getElementById('gb-rel').value;
+  const msg  = document.getElementById('gb-msg').value.trim();
+
+  // Validate
+  document.getElementById('gb-name').style.borderColor = !name ? 'rgba(212,68,68,0.6)' : '';
+  document.getElementById('gb-msg').style.borderColor  = !msg  ? 'rgba(212,68,68,0.6)' : '';
+  document.getElementById('gb-rel').style.borderColor  = !rel  ? 'rgba(212,68,68,0.6)' : '';
+  if(!name || !msg || !rel) return;
+
+  const btn = document.getElementById('gb-btn');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Saving...';
+
+  if(SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL_HERE' || window.location.protocol === 'file:'){
+    // Demo mode — running locally, show message but explain hosting needed
+    if(window.location.protocol === 'file:'){
+      await new Promise(r=>setTimeout(r,700));
+      const succ=document.getElementById('gb-success');
+      succ.innerHTML='✓ &nbsp;Works locally in demo mode — host online to save to Google Sheets!';
+      succ.classList.add('show');
+      setTimeout(()=>succ.classList.remove('show'),5000);
+      btn.disabled=false;btn.querySelector('span').textContent='Post Message';
+      return;
+    }
+    // Demo mode — just show locally
+    await new Promise(r=>setTimeout(r,700));
+    const now = new Date();
+    const fakeEntry = {
+      name, role, relationship:rel, message:msg,
+      date: now.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})
+    };
+    const existing = [];
+    document.querySelectorAll('.gb-entry').forEach(el=>{
+      existing.push({
+        name: el.querySelector('.gb-entry-name').textContent,
+        role: el.querySelector('[style*="0.72rem"]')?.textContent||'',
+        relationship: Object.keys(REL_STYLE)[0],
+        message: el.querySelector('.gb-entry-msg').textContent.replace(/^"|"$/g,''),
+        date: el.querySelector('.gb-entry-time').textContent
+      });
+    });
+    renderEntries([...existing, fakeEntry]);
+    resetForm(btn);
+    return;
+  }
+
+  try{
+    // Method: hidden iframe form POST — bypasses ALL CORS issues
+    const iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = SCRIPT_URL;
+    form.target = 'hidden_iframe';
+    form.style.display = 'none';
+
+    const fields = { action:'add', name, role, relationship:rel, message:msg };
+    Object.entries(fields).forEach(([k,v])=>{
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = k;
+      input.value = v;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+
+    // Wait for Google to process it
+    await new Promise(r=>setTimeout(r,2500));
+
+    // Cleanup
+    document.body.removeChild(form);
+    document.body.removeChild(iframe);
+
+    // Try to reload entries
+    await loadEntries();
+    resetForm(btn);
+
+  } catch(err){
+    console.error('Submit error:', err);
+    resetForm(btn);
+  }
+}
+
+function resetForm(btn){
+  document.getElementById('gb-name').value = '';
+  document.getElementById('gb-role').value = '';
+  document.getElementById('gb-rel').value  = '';
+  document.getElementById('gb-msg').value  = '';
+  btn.disabled = false;
+  btn.querySelector('span').textContent = 'Post Message';
+  const succ = document.getElementById('gb-success');
+  succ.classList.add('show');
+  setTimeout(()=>succ.classList.remove('show'), 3500);
+  document.getElementById('gb-entries').scrollTop = 0;
+}
+
+// Auto-refresh every 30 seconds to pick up new comments (only when hosted)
+loadEntries();
+setInterval(loadEntries, 20000);
+
+
+// MOBILE MENU
+function toggleMenu(){
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobile-menu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+</script>
+</body>
+</html>
