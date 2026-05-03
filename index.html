@@ -1305,7 +1305,7 @@ async function loadEntries(){
   }
   // localhost and hosted both work fine
   try{
-    const res = await fetch(SCRIPT_URL + '?action=get', {
+    const res = await fetch(SCRIPT_URL + '?action=get&sheet=Form_Responses', {
       method: 'GET',
       mode: 'cors',
     });
